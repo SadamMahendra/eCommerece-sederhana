@@ -1,6 +1,8 @@
 import Container from "../../components/Container/Container";
 import useProductStore from "../../store/product-store";
 
+import shoppingBag from "../../assets/icons/shopping-bag.svg";
+
 const index = () => {
   const listProducts = useProductStore((state) => state.products);
   const addToCart = useProductStore((state) => state.addToCart);
@@ -35,9 +37,11 @@ const index = () => {
             ) : (
               <button
                 onClick={() => addToCart(item)}
-                className="mt-2 w-full border bg-black p-2 text-base font-bold text-white shadow-sm outline-none"
+                className="mt-2 w-full border bg-black p-2 text-base text-white shadow-sm outline-none hover:opacity-90"
               >
-                TAMBAH
+                <div className="flex items-center justify-center gap-2">
+                  <img src={shoppingBag} alt="shopping bag" /> <h3>TAMBAH </h3>
+                </div>
               </button>
             )}
           </div>

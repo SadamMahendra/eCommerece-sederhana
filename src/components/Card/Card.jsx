@@ -21,7 +21,7 @@ const Card = ({ data }) => {
             <div>
               <p className="text-sm text-slate-500">{data.listCart[0].type}</p>
               <h2 className="text-lg font-semibold">{data.listCart[0].name}</h2>
-              <h3 className="font-base text-secondary font-semibold">
+              <h3 className="font-base font-semibold text-secondary">
                 <span>{data.listCart[0].quantity} x </span>
                 Rp {data.listCart[0].price}
               </h3>
@@ -42,7 +42,7 @@ const Card = ({ data }) => {
         <div className="flex justify-end">
           <button
             onClick={() => navigate(`${data.id}`)}
-            className="rounded-md bg-green-500 p-2 text-white"
+            className="rounded-md bg-black p-2 text-white hover:opacity-90"
           >
             lihat detail
           </button>
