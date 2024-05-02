@@ -9,7 +9,10 @@ const Card = ({
   return (
     <div className="mb-28 flex flex-wrap">
       {data.map((item, index) => (
-        <div key={index} className="relative flex w-full p-2">
+        <div
+          key={index}
+          className="relative my-2 flex w-full rounded-md border p-2 shadow-md"
+        >
           <img
             src={item.img}
             alt={item.name}
@@ -19,7 +22,7 @@ const Card = ({
             <div>
               <p className="text-sm text-slate-500">{item.type}</p>
               <h2 className="text-lg font-semibold">{item.name}</h2>
-              <h3 className="font-base text-secondary font-semibold">
+              <h3 className="font-base font-semibold text-secondary">
                 Rp {item.price}
               </h3>
             </div>
