@@ -20,9 +20,7 @@ const index = () => {
   const deleteCart = useProductStore((state) => state.deleteCart);
   const stockManagement = useProductStore((state) => state.stockManagement);
   const clearCart = useProductStore((state) => state.clearCart);
-
   const addToHistory = useProductStore((state) => state.addToHistory);
-  console.log(listCart);
 
   const increaseQuantityCart = function (productId, quantity, stock) {
     if (quantity <= stock) {
@@ -53,8 +51,8 @@ const index = () => {
   const handleBuy = (listCart) => {
     const tanggal = new Date();
     const id = "id" + Math.random().toString(16).slice(2);
-
     const total = getTotalPrice(listCart);
+
     if (Number(number) < total) {
       alert("duitnya kurang");
       console.log("duitnya kurang", number, total);
@@ -71,6 +69,7 @@ const index = () => {
       stockManagement();
       clearCart();
       setNumber(0);
+      alert("Terimakasih sudah membeli");
       navigate("/history");
     }
   };
@@ -108,7 +107,7 @@ const index = () => {
           </div>
 
           {showPaymentPopup && (
-            <div className="fixed inset-0 flex items-center justify-center bg-gray-700 bg-opacity-50">
+            <div className="fixed inset-0 flex items-center justify-center bg-gray-700 bg-opacity-50 transition">
               <div className="relative w-[340px] rounded-md bg-white p-4">
                 <h2 className="mb-4 text-lg font-semibold">Pembayaran</h2>
                 <div className="grid grid-cols-2 items-center gap-4 p-4">
