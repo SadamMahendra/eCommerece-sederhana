@@ -21,11 +21,9 @@ const Card = ({ item }) => {
                   </h3>
                   {item.length > 1 ? (
                     <div>
-                      <h3>+{item.length - 1} produk lainnya</h3>
+                      <h3>+{item.length - 1} produk lainnya </h3>
                     </div>
-                  ) : (
-                    <div></div>
-                  )}
+                  ) : null}
                 </div>
                 <div className="text-center">
                   <h3>Total</h3>
