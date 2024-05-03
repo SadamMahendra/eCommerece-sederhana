@@ -65,11 +65,13 @@ const index = () => {
         date: tanggal.toLocaleString(),
         money: Number(number),
       };
+      alert(`Kembalian Rp.${number - total}`);
+      alert("Terimakasih sudah membeli");
       addToHistory(purchase);
       stockManagement();
       clearCart();
       setNumber(0);
-      alert("Terimakasih sudah membeli");
+
       navigate("/history");
     }
   };
